@@ -1,0 +1,11 @@
+:root {
+	--hue-rotate: 0deg;
+	--color-1: #886644;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow-y: scroll;
+	font-family: "Comfortaa";
+}
