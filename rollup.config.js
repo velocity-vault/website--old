@@ -4,6 +4,12 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import dotenv from 'dotenv';
+import injectProcessEnv from 'rollup-plugin-inject-process-env';
+
+dotenv.config();
+if (process.env.VV_API_BASE_URL == null)
+	throw new Error("VV_API_BASE_URL environment variable is not set");
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -57,6 +63,10 @@ export default {
 			dedupe: ['svelte']
 		}),
 		commonjs(),
+
+		injectProcessEnv({
+			VV_API_BASE_URL: process.env.VV_API_BASE_URL
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
