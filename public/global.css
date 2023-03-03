@@ -1,6 +1,14 @@
-:root {
-	--hue-rotate: 0deg;
-	--color-1: #886644;
+* {
+	box-sizing: border-box;
+}
+
+img {
+	display: block;
+}
+
+html,
+body {
+	min-height: 100svh;
 }
 
 body {
@@ -8,4 +16,6 @@ body {
 	padding: 0;
 	overflow-y: scroll;
 	font-family: "Comfortaa";
+	color: #fff;
+	background-color: #201d19;
 }
