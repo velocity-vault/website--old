@@ -1,6 +1,4 @@
 <script>
-    $: document.documentElement.style.setProperty('--hue-rotate', '45deg');
-
     let cookies = 0;
     function addCookie() {
         cookies++;
